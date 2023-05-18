@@ -1,0 +1,143 @@
+body {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    color: #555;
+    position: relative;
+    /* https://stackoverflow.com/questions/3893986/css-media-print-issues-with-background-color */
+    color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+iframe {
+    width: 100%;
+    height: 180px;
+    border: 0;
+}
+
+/* Start: Strivr text */
+.invoice-number:before { /* https://stackoverflow.com/questions/8904836/how-can-i-insert-text-before-an-item-with-css */
+    content: "INVOICE NO. ";
+}
+
+.invoice-date:before {
+    content: "DATE ";
+}
+
+.from-name:before {
+    content: "NAME ";
+}
+
+.from-email:before {
+    content: "EMAIL ";
+}
+
+.from-phone:before {
+    content: " / PHONE ";
+}
+
+.from-address1:before {
+    content: "ADDRESS ";
+}
+
+#total-due:before {
+    content: "TOTAL DUE \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 ";
+}
+
+.memo:after {
+    content: "\A \A Thank you for your business!";
+}
+/* End: Strivr text */
+
+/* Start: Strivr style */
+.invoice-number, .invoice-date, .header {
+    background-color: #2F5496; /*midnightblue; */
+    color: white;
+}
+
+.invoice-number {
+    float: left;
+    padding: .8em;
+}
+
+.invoice-date {
+    display: block; /* https://stackoverflow.com/questions/9448311/clear-right-with-span */
+    text-align: right;
+    padding: .8em;
+}
+
+.from {
+    padding: .4em .8em;
+    border: 1px solid #2F5496;
+}
+
+.from-name, .from-phone, .from-address1, .from-address2 {
+    display: block;
+}
+
+.from-email {
+    float: left;
+    padding: 0 .3em 0 0;
+}
+
+.from-address2 {
+    padding-left: 5.2em;
+}
+
+.to {
+    position: relative; /* https://youtu.be/jx5jmI0UlXU */
+    margin: 1.5em 0;
+}
+
+.to-bill-header {
+    color: #2F5496;
+    display: block;
+    padding-left: 1em;
+    border-bottom: 1px solid #2F5496;
+}
+
+.to-instructions-header {
+    color: #2F5496;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+.to-bill {
+    padding-left: 1em;
+}
+
+.to-instructions {
+    position: absolute;
+    top: 1.6em;
+    left: 50%;
+}
+
+.line-items {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1.2fr .5fr; /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
+    grid-template-rows: repeat(auto-fill, 30px); /* https://stackoverflow.com/questions/43115822/can-i-make-a-css-grid-with-dynamic-number-of-rows-or-columns */
+    height: 500px;
+    margin: 1.5em 0;
+}
+
+    .line-items span {
+        padding: 4px;
+        border-bottom: 1px solid #BBB;
+    }
+
+#total-due {
+    margin-left: 50%;
+    display: block;
+    color: #2F5496;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.memo {
+    display: block;
+    margin-top: 2em;
+    margin-left: 50%;
+}
+/* End: Strivr style */

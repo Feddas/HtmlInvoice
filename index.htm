@@ -1,0 +1,41 @@
+<html>
+<body>
+    <H1>Goal</H1>
+    HTML based template to create invoices by modifying HTML. Using that HTML to <a href="https://www.consumerfinance.gov/consumer-tools/save-as-pdf-instructions">export a PDF by using a web browser's print dialog</a>.
+
+    <H1>What it does</H1>
+    <ul>
+        <li>Automatically calculates invoice total and rows.</li>
+        <li>Each invoice references shared files to reuse styles, header, and footer.</li>
+        <li>Diff support between each invoice.</li>
+    </ul>
+
+    <H1>Usage</H1>
+    Steps to create a new invoice.
+    <ol>
+        <li>Only for the first time using this, update invoiceFromTo.htm with your From & To information.</li>
+        <li>Create a copy of invoice2022.8.example.htm and rename it to match the invoice date.</li>
+        <li>Open the copied file in your text or html editor of choice.</li>
+        <li>Update fields.</li>
+        <ol>
+            <li>invoice-number</li>
+            <li>invoice-date</li>
+            <li>rate-per-unit - Update this only if there is a change in your rate since your last invoice. This rate is per day. It is not shown in the PDF. It is used as a multiplier for the "units" in the line items beneath it.</li>
+            <li>line items - Each line item is made up of 2 &lt;span&gt;s. First &lt;span&gt; is the description of the line item. The second line is the number of units used to complete it. Copy these 2 &lt;span&gt;s for as many line items as you need.</li>
+        </ol>
+    </ol>
+
+    <H1>Architecture</H1>
+    3 files are referenced by each invoice. These 3 files create common styles and calculations on all invoices. The example invoice is invoice2022.8.example.htm. That is the file that should be copied and modified for each new invoice.
+    <ul>
+        <li><a href="invoice2022.8.example.htm">invoice2022.8.example.htm</a> - File that should be copied, then modified, for each invoice.</li>
+        <li>invoiceFromTo.htm - File that should be updated only once. Contains your information and the information of who is being billed.</li>
+        <li>invoiceMath.js & invoicestrivr.css - Files that never need to be modified. Unless you'd like to change the appearance of the invoice.</li>
+    </ul>
+
+    <H1>Repository</H1>
+    <p>
+        If you have a fantastic idea for modifications. Pull request potential on GitHub @ <a href="https://github.com/Feddas/HtmlInvoice">HtmlInvoice</a>.
+    </p>
+</body>
+</html>

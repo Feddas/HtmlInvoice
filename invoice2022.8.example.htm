@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="invoicestrivr.css">
+    <script src="invoiceMath.js"></script>
+</head>
+
+<body>
+    <span class="invoice-number">002 - 2022.8</span>
+    <span class="invoice-date">August 31st, 2022</span>
+
+    <iframe src="invoiceFromTo.htm"></iframe>
+
+    <div class="line-items">
+        <span class="header">DESCRIPTION</span>
+        <span class="header"># OF DAYS</span>
+        <span class="header">RATE PER DAY</span>
+        <span class="header">TOTAL</span>
+
+        <span hidden id="rate-per-unit">42</span> <!-- Monetary multiplier for "units" below. This value is not shown in the PDF. https://www.w3schools.com/TAGS/att_hidden.asp -->
+
+        <span>Example description of work</span>
+        <span class="units">1</span>
+
+        <span>2nd example line item</span>
+        <span class="units">9</span>
+    </div>
+    <span id="total-due">$???</span>
+    <span class="memo"></span>
+</body>
+</html>

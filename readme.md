@@ -1,0 +1,1 @@
+Information about HtmlInvoice is in [index.htm](index.htm).
