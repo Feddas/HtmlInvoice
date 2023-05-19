@@ -1,1 +1,1 @@
-Information about HtmlInvoice is in [index.htm](index.htm).
+Information about HtmlInvoice is in [index.htm](https://feddas.github.io/HtmlInvoice/index.htm).
