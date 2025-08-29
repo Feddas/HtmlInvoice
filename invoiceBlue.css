@@ -41,6 +41,10 @@ iframe {
     content: "ADDRESS ";
 }
 
+#total-units:before {
+    content: "TOTAL UNITS \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 ";
+}
+
 #total-due:before {
     content: "TOTAL DUE \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 \a0 ";
 }
@@ -117,15 +121,26 @@ iframe {
 .line-items {
     display: grid;
     grid-template-columns: 4fr 1fr 1.2fr .5fr; /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
-    grid-template-rows: repeat(auto-fill, 30px); /* https://stackoverflow.com/questions/43115822/can-i-make-a-css-grid-with-dynamic-number-of-rows-or-columns */
-    height: 500px;
+    grid-template-rows: repeat(auto-fill, 16px); /* https://stackoverflow.com/questions/43115822/can-i-make-a-css-grid-with-dynamic-number-of-rows-or-columns */
     margin: 1.5em 0;
 }
 
-    .line-items span {
-        padding: 4px;
-        border-bottom: 1px solid #BBB;
-    }
+.line-items .header {
+    height: 20px;
+}
+
+.line-items span {
+    padding: 0px;
+    border-bottom: 1px solid #BBB;
+}
+
+#total-units {
+    margin-left: 50%;
+    display: block;
+    color: #2F5496;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
 
 #total-due {
     margin-left: 50%;

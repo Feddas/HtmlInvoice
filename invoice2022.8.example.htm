@@ -2,9 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="invoicestrivr.css">
+    <link rel="stylesheet" href="invoiceBlue.css">
     <script src="invoiceMath.js"></script>
 </head>
+
+<!-- latest version and how to use @ https://github.com/Feddas/HtmlInvoice -->
 
 <body>
     <span class="invoice-number">002 - 2022.8</span>
@@ -18,7 +20,9 @@
         <span class="header">RATE PER DAY</span>
         <span class="header">TOTAL</span>
 
-        <span hidden id="rate-per-unit">42</span> <!-- Monetary multiplier for "units" below. This value is not shown in the PDF. https://www.w3schools.com/TAGS/att_hidden.asp -->
+        <!-- Monetary multiplier for "units" below.
+        This value is not shown in the PDF. https://www.w3schools.com/TAGS/att_hidden.asp -->
+        <span hidden id="rate-per-unit">42</span>
 
         <span>Example description of work</span>
         <span class="units">1</span>
@@ -26,6 +30,7 @@
         <span>2nd example line item</span>
         <span class="units">9</span>
     </div>
+    <span id="total-units">$???</span>
     <span id="total-due">$???</span>
     <span class="memo"></span>
 </body>

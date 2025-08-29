@@ -1,4 +1,5 @@
 var ratePerUnit = -1;
+var unitsTotal = 0;
 var grandTotal = 0;
 
 function calculateTotalDue() {
@@ -12,17 +13,20 @@ function calculateTotalDue() {
         calculateSubTotal(lineItems[i]);
     }
 
-    // print grand total
+    // print totals from all rows
+    var totalUnits = document.getElementById("total-units");
+    totalUnits.textContent = unitsTotal;
     var totalDue = document.getElementById("total-due");
     totalDue.textContent = "$" + grandTotal;
 }
 
 function calculateSubTotal(lineItem) {
     // calculate values for this line
-    var units = lineItem.textContent;
+    var units = 1 * lineItem.textContent; // 1 to make int
     var subTotal = units * ratePerUnit;
+    unitsTotal += units;
     grandTotal += subTotal;
-    console.log("Running total after " + units + " units: " + grandTotal);
+    console.log("Running total after " + unitsTotal + " units: " + grandTotal);
 
     // add subTotal first so the rate will go between it and the lineItem
     var subTotalText = document.createElement("span");
